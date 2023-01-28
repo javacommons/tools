@@ -7,7 +7,7 @@ appName=javacommons.demo
 cwd=`pwd`
 ts=`date "+%Y.%m%d.%H%M.%S"`
 version=${ts}
-ls *.csproj | xargs sed -i -e "s/<Version>.*<\/Version>/<Version>${version}<\/Version>/g"
+sed -i -e "s/<Version>.*<\/Version>/<Version>${version}<\/Version>/g" ${appName}.csproj
 rm -rf obj bin ${appName}.*.zip
 dotnet build -c Release
 cd bin/Release/net462
